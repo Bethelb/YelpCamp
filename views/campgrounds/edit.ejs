@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Page</title>
+</head>
+<body>
+    <h1>Edit <%=campground.title%></h1>
+    <form action="/campgrounds/<%=campground._id%>?_method=PATCH" method="POST">
+        <div>
+            <label for="title">Title</label> 
+            <input type="text" name="campground[title]" id="title" placeholder="title" value="<%=campground.title%>">
+        </div>
+         <div>
+            <label for="location">Location</label> 
+            <input type="text" name="campground[location]" id="location" placeholder="location" value="<%=campground.location%>">
+        </div>
+        <div>
+            <label for="price">Price</label> 
+            <input type="Number" step="0.01"  name="campground[price]" id="price" placeholder="price" value="<%=campground.price%>">
+        </div>
+        <div>
+            <label for="image">Image</label> 
+            <input type="text" name="campground[image]" id="image" placeholder="image" value="<%=campground.image%>">
+        <div>
+            <label for="description">Description</label> 
+            <textarea name="campground[description]" id="" >
+                <%=campground.title%>
+            </textarea>
+        </div>
+        <button>Submit</button>
+    </form>
+    <div><a href="/campgrounds/<%=campground._id%>">Back</a></div>
+    
+</body>
+</html>
